@@ -21,3 +21,11 @@ def digital_root(n)
   end
   n
 end
+
+#ruby 2.4 solutions (codewars is slow to update langauges)
+
+class Integer
+  def digits
+    to_s.chars.map(&:to_i)
+  end
+end
