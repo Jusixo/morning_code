@@ -13,4 +13,11 @@ def digital_root(n)
   num.to_i > 9 ? digital_root(num.to_i) : num.to_i
 end
 
-# Better solution
+#better solution (faster)
+
+def digital_root(n)
+  until n < 10
+    n = n.digits.sum
+  end
+  n
+end
