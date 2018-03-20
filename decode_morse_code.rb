@@ -7,6 +7,14 @@
 #
 # Your task is to implement a function that would take the morse code as input and return a decoded human-readable string.
 
+--------
+
+#split on the word separator to get the words
+#Then process each word by splitting on a single space to get the letters
+#Translate each of those
+#join them (no spaces)
+#then join the resulting words with a single space
+
 # Solution:
 
 def decodeMorse(morse_code)
