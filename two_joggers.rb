@@ -22,3 +22,12 @@ def nbr_of_laps(x, y)
   y = i/y
   laps = [x, y]
 end
+
+# ^ solution was bad because i redefined arguments passed to a method.
+
+*better solution*
+
+def nbr_of_laps(x, y)
+  lcm = x.lcm(y)
+  [lcm/x, lcm/y]
+end
