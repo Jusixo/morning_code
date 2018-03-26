@@ -27,3 +27,15 @@ def isPP(n)
   end
   return nil
 end
+
+# Refactor:
+
+def isPP(n)
+  (2..(n ** 0.5)).each do |m|
+    k = (Math.log(n, m)).round
+    if m ** k == n
+      return [m, k]
+    end
+  end
+  return nil
+end
