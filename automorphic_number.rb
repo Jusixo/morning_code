@@ -27,3 +27,9 @@ def automorphic(n)
   end
   return "Automorphic"
 end
+
+#refactored one liner
+
+def automorphic(n)
+  n.to_s == (n**2).to_s[(0-n.to_s.size)..-1] ? "Automorphic" : "Not!!"
+end
