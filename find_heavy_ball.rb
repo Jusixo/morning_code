@@ -17,3 +17,20 @@
 # scales.getWeight([3, 4], [5, 2]) returns -1 if weight of balls 3 and 4 is heavier than weight of balls 5 and 2 etc.
 #
 # So where's the catch, you may ask. Well - the scales is very old. You can use it only 4 TIMES before the scale breaks.
+
+
+def find_heavy(scales, indexes)
+  left, right = indexes.each_slice(indexes.length / 2).to_a
+
+  weight = scales.get_weight(left, right)
+
+  if left.size == 1
+    weight < 0 ? left.first : right.first
+  else
+    weight < 0 ? find_heavy(scales, left) : find_heavy(scales, right)
+  end
+end
+
+def find_ball(scales)
+  find_heavy(scales, (0..7).to_a)
+end
