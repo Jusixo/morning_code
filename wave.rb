@@ -1,8 +1,7 @@
 def wave(str)
   result = []
   (0...str.length).each{|c|
-    if str[c] == " "
-    else
+    unless str[c] == " "
       b = str.split("")
       a = str[c].capitalize
       b.delete_at(c)
